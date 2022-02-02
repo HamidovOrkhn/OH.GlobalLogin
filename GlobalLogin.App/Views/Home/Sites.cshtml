@@ -1,0 +1,47 @@
+﻿
+@model List<GlobalLogin.App.Models.UserRole>
+@inject Microsoft.Extensions.Configuration.IConfiguration cnf
+@{ 
+    int permId = int.Parse(cnf["MainConfig:PermId"]);
+}
+    <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+
+
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                if (permId != item.Id)
+                {
+                    <div class="col-lg-3">
+                        <div class="card" style="width: 80%;">
+                            @if (item.IsHttps == 1)
+                            {
+                                <div class="img-hover-zoom">
+                                    <a href="https://@(item.SiteUrl)" target="_blank"> <img src="~/uploads/@item.ImageUrl" alt="This zooms-in really well and smooth"></a>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="img-hover-zoom">
+                                    <a href="http://@(item.SiteUrl)" target="_blank"> <img src="~/uploads/@item.ImageUrl" alt="This zooms-in really well and smooth"></a>
+                                </div>
+                            }
+                            <h5>@item.Title</h5>
+                        </div>
+                    </div>
+                }
+
+            }
+
+
+        </div>
+
+
+        <!-- /.row -->
+        <!-- Main row -->
+        <div class="row">
+            <!-- right col -->
+        </div>
+        <!-- /.row (main row) -->
+    </div>

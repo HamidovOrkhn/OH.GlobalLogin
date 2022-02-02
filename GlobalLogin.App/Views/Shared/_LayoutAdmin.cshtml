@@ -1,0 +1,54 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!doctype html>
+<html style="height: 100%;" lang="en">
+
+
+<!-- Mirrored from themesbrand.com/skote/layouts/auth-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Jan 2022 05:43:57 GMT -->
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="~/auth/assets/images/favicon.ico">
+
+    <!-- Bootstrap Css -->
+    <link href="~/auth/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="~/auth/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="~/auth/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <!-- Font Awesome -->
+    <!-- <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    rel="stylesheet"
+    />
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+    />
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css"
+    rel="stylesheet"
+    /> -->
+
+</head>
+
+<body style="height: 100%;overflow-x:hidden;">
+    @RenderBody()
+    <!-- JAVASCRIPT -->
+    <script src="~/auth/assets/libs/jquery/jquery.min.js"></script>
+    <script src="~/auth/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/auth/assets/libs/metismenu/metisMenu.min.js"></script>
+    <script src="~/auth/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="~/auth/assets/libs/node-waves/waves.min.js"></script>
+
+    <!-- App js -->
+    <script src="~/auth/assets/js/app.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>

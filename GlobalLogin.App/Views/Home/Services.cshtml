@@ -1,0 +1,113 @@
+﻿<div class="row">
+    <div class="col-12">
+        <div class="card card-warning mt-5" style="height: auto;">
+            <div class="card-header" style="background-color:#c29636 !important ;">
+                <h3 class="card-title" style="color: white !important;">Müraciət Formu</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <div class="card-body">
+                <form action="" method="POST" enctype="multipart/form-data">
+                  
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Ad Soyad</label>
+                                <input required type="text" name="fullname" value=""
+                                       class="form-control" id="exampleInputEmail1" placeholder="Ad Soyad">
+                                
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="exampleInputFile">Foto </label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input required type="file" name="image" accept="image/*"
+                                               class="custom-file-input" id="exampleInputFile">
+                                        <label class="custom-file-label" for="exampleInputFile">Şəkil Əlavə et</label>
+
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Email</label>
+                                <input required type="email" value="" name="email"
+                                       class="form-control" id="exampleInputPassword1" placeholder="Email">
+                          
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- select -->
+                            <div class="form-group">
+                                <label>Portallar</label>
+                                <select required name="portal" class="form-control">
+                                    <option selected disabled>Portallar</option>
+                                    <option selected value="Elektron AKT Sistemi">
+                                        Elektron AKT Sistemi
+                                    </option>
+                                    <option selected value="ESDpro">ESDpro</option>
+                                    <option selected value="Avtomatik İdarəetmə Portalı">
+                                        Avtomatik
+                                        İdarəetmə Portalı
+                                    </option>
+                                    <option selected  value="Elektron Satınalma">
+                                        Elektron Satınalma
+                                    </option>
+                                    <option selected  value="Smart Hesabatlar">Smart Hesabatlar</option>
+                                    <option selected  value="Elektron Satınalma (Asan Xidmət)">
+                                        Elektron
+                                        Satınalma (Asan Xidmət)
+                                    </option>
+                                    <option selected  value="Transformatorların İdarə Olunması Portalı">
+                                        Transformatorların İdarə Olunması Portalı
+                                    </option>
+                                    <option selected  value="Akt Ödəniş Sisteminə Giriş">
+                                        Akt Ödəniş
+                                        Sisteminə Giriş
+                                    </option>
+                                    <option selected  value="Elektron Müraciət Sistemi">
+                                        Elektron Müraciət
+                                        Sistemi
+                                    </option>
+                                </select>
+                               
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Başlıq</label>
+                                <input required value="" type="text" name="title"
+                                       class="form-control" id="exampleInputEmail1" placeholder="Başlıq">
+                              
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- textarea -->
+                            <div class="form-group">
+                                <label>Mətn</label>
+                                <textarea required name="detail" class="form-control" rows="3"
+                                          placeholder="Mətn Əlavə et ..."></textarea>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+
+                    <div>
+                        <button type="submit" class="btn btn-warning"
+                                style="color: white; background-color:#c29636 !important ; border-color:#c29636 !important ; ">
+                            Təsdiqlə
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{ 
+
+}

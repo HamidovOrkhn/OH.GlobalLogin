@@ -1,0 +1,119 @@
+﻿@model GlobalLogin.App.Models.UserInfo
+@inject Microsoft.Extensions.Configuration.IConfiguration cnf 
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_LayoutAdmin";
+    string url = Context.Request.Scheme + "://" + Context.Request.Host.Value;
+
+    if (ViewContext.HttpContext.Request.Query["url"].Count>0)
+    {
+        url = ViewContext.HttpContext.Request.Query["url"];
+    }
+    int permId = int.Parse(cnf["MainConfig:PermId"]);
+
+    if (ViewContext.HttpContext.Request.Query["permId"].Count>0)
+    {
+        permId = int.Parse(ViewContext.HttpContext.Request.Query["permId"]);
+    }
+}
+<div class="container-fliud" style="height: 100%;
+    position: relative;
+    background: linear-gradient(
+90deg
+, rgba(2,0,36,1) 0%, rgba(29,29,129,1) 50%, rgba(0,212,255,1) 100%); ">
+    <div class="row justify-content-center">
+
+        <div class="col-md-8 col-lg-6 col-xl-5" style="position: absolute;
+            bottom: 140px;
+            z-index: 1;">
+            <div class="card overflow-hidden" style="box-shadow: 0px 14px 43px -10px rgba(10,10,10,0.65);
+                -webkit-box-shadow: 0px 14px 43px -10px rgba(10,10,10,0.65);
+                -moz-box-shadow: 0px 14px 43px -10px rgba(10,10,10,0.65);">
+                <div class="bg-primary bg-soft">
+                    <div class="row">
+                        <div class="col-12" style="background: #1d1d81;
+                            height: 128px;">
+                            <div class="text-primary p-4 text-center" style="    color: white !important;">
+                                <a href="/" style="position: absolute; left: 25px; color: white;">
+                                    <i style="font-size: 15px;" class="fas fa-chevron-left"></i>
+                                    <strong>Geri</strong>
+                                </a>
+                                <h5 class="text-primary" style="color: white !important;">Azerisiq ASC</h5>
+                                <p>Vahid Login Sistemine Giris</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body pt-0" style="height: 300px;">
+                    <div class="auth-logo">
+                        <a href="index.html" class="auth-logo-light">
+                            <div class="avatar-md profile-user-wid mb-4">
+                                <span class="avatar-title rounded-circle bg-light">
+                                    <img src="assets/images/logo-light.svg" alt="" class="rounded-circle" height="34">
+                                </span>
+                            </div>
+                        </a>
+
+                        <a href="/" class="auth-logo-dark" style="position: absolute;
+                            left: 232px;
+                            /* height: 129px;">
+                            <div class="avatar-md profile-user-wid mb-4">
+                                <span class="avatar-title rounded-circle bg-light">
+                                    <img src="assets/images/logo.svg" alt="" class="rounded-circle" height="34">
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="p-2">
+                        <form class="form-horizontal" asp-action="Login" asp-route-url=@url asp-route-permId="@permId" method="post" style="padding: 30px;">
+
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input oninput="this.value = this.value.toUpperCase()" asp-for="Pin" type="text" class="form-control" id="username" placeholder="FİN məlumatlarınızı daxil edin">
+                                <span class="text-danger" asp-validation-for="Pin"></span>
+                            </div>
+                          
+
+                            <div class="mb-3">
+                                <label class="form-label">Password</label>
+                                <div class="input-group auth-pass-inputgroup">
+                                    <input asp-for="Password" class="form-control" placeholder="Şifrənizi daxil edin" aria-describedby="password-addon">
+                                    <button class="btn btn-light " type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
+                                </div>
+                                <span class="text-danger" asp-validation-for="Password"></span>
+                            </div>
+                            <div class="mt-3 d-grid">
+                                <button class="btn btn-primary waves-effect waves-light" type="submit">Daxil ol</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <img src="./img/wave.svg" style="position: absolute;height: 100%;" alt="">
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @if (TempData["RemoteAddressError"] is object)
+    {
+        <script>
+            var error = "@TempData["RemoteAddressError"]"
+            alert(error)
+        </script>
+    }
+    @if (TempData["NotValidUrlError"] is object)
+    {
+        <script>
+            Swal.fire('Sayt linki qeydiyyatımızda mövcud deyil')
+        </script>
+    }
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
